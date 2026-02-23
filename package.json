@@ -1,0 +1,13 @@
+{
+  "name": "andw-simple-faqpage-schema",
+  "version": "0.1.0",
+  "description": "FAQPage Schema generator block for WordPress",
+  "private": true,
+  "scripts": {
+    "build": "wp-scripts build src/index.js --output-path=build",
+    "start": "wp-scripts start src/index.js --output-path=build"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^30.0.0"
+  }
+}

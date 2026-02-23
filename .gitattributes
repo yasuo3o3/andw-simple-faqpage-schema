@@ -12,3 +12,7 @@ HANDOFF.md export-ignore
 CLAUDE.md export-ignore
 README.md export-ignore
 .distignore export-ignore
+src export-ignore
+package.json export-ignore
+package-lock.json export-ignore
+node_modules export-ignore
