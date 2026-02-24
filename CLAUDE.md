@@ -20,10 +20,10 @@
 - 毎セッション終了時: `HANDOFF.md` を更新（現在地・次にやること・注意点）
 
 ## 出力ルール
-- 作業完了時は短い日本語コミットメッセージを提示
+- コード変更時は細かい粒度でコミット（1ファイルまたは1機能単位、短い日本語メッセージ）
 - `docs/conversation-log/YYYY-MM-DD.md` にユーザー要求と最終回答のみを保存
 
 ## テンプレート同期
 - マスターテンプレート: `c:\andW\andw-template`
-- 同期対象: `CLAUDE.md`, `docs/AGENTS.md`, `docs/AI-CODING-PATTERNS.md`, `docs/CONTRIB.md`, `docs/WORDPRESS.md`
+- 同期対象: `CLAUDE.md`, `docs/AGENTS.md`, `docs/AI-CODING-PATTERNS.md`, `docs/CONTRIB.md`, `docs/WORDPRESS.md`, `docs/SETUP.md`
 - 同期時は差分を見せて確認してから反映すること
