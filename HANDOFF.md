@@ -16,6 +16,7 @@
 | 1 | `claude/wordpress-faq-schema-plugin-Zh6Wf` | v0.1.0 初期実装 | PR #1 → main マージ済み |
 | 2 | `claude/wordpress-faq-schema-plugin-vQSTL` | 実装セッション（補助） | 参照情報 |
 | 3 | `claude/wordpress-faq-schema-docs-TXvx1` | ドキュメント整備・ブログ記事作成 | 完了 |
+| 4 | - | 競合検知・JSON-LD抑制機能・フィルター追加 | 完了 |
 
 ---
 
@@ -31,6 +32,13 @@
 7. JSビルド成功（@wordpress/scripts）
 8. PHP構文チェック通過
 9. v0.1.0 調査レポート4件を追加（セキュリティ監査・SEO構造化データ監査・マーケティング評価・Google FAQリッチリザルト調査）
+
+### 実装（セッション4）
+10. 設定画面に他SEOプラグイン（Yoast, Rank Math, AIOSEO）の検知と警告表示を追加
+11. 設定画面に「JSON-LD出力を無効にする」オプションを追加
+12. 投稿エディタに他プラグイン（Yoast/Rank Math）のFAQブロック競合検知と警告を追加（トップレベルおよびインナーブロックの再帰的走査に対応）
+13. `andw_faq_schema_enabled` フィルターフックの追加とJSON-LD出力制御ロジックの適用
+14. `uninstall.php` に新規オプションの削除処理を追記
 
 ### ドキュメント（セッション3）
 9. HANDOFF.md 更新（ローカルIDE引き継ぎ用に詳細化）
@@ -151,6 +159,7 @@ vendor/bin/phpcs --standard=WordPress andw-simple-faqpage-schema.php includes/
 | 見出しCSSクラス | `andw-faq-question` |
 | オプション: 見出しリセット | `andw_faq_schema_reset_heading` |
 | オプション: カスタムCSS | `andw_faq_schema_custom_css` |
+| オプション: JSON-LD無効化 | `andw_faq_schema_disable_jsonld` |
 | 設定グループ | `andw_faq_schema_settings` |
 | 設定ページスラッグ | `andw-faq-schema-settings` |
 
@@ -159,6 +168,7 @@ vendor/bin/phpcs --standard=WordPress andw-simple-faqpage-schema.php includes/
 |--------|------|------|
 | `init` | `andw_faq_schema_register_block` | ブロック登録 |
 | `wp_head` | `andw_faq_schema_output_jsonld` | JSON-LD出力 |
+| `andw_faq_schema_enabled` | - | （フィルター）JSON-LD出力制御 |
 | `wp_enqueue_scripts` | `andw_faq_schema_enqueue_front_styles` | フロントCSS |
 | `admin_init` | 設定登録 | Settings API |
 | `admin_menu` | 設定ページ追加 | 管理メニュー |

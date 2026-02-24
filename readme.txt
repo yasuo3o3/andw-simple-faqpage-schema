@@ -4,7 +4,7 @@ Tags: faq, schema, structured-data, json-ld, seo
 Requires at least: 6.4
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 0.1.0
+Stable tag: 0.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,12 +47,19 @@ FAQブロックが含まれる投稿・固定ページの `<head>` 内に、JSON
 
 == Changelog ==
 
+= 0.2.0 =
+* 競合プラグインの事前警告とJSON-LD出力を無効にするオプションを追加
+* 他プラグイン（Yoast / Rank Math SEO等）のFAQブロックとの競合検知を追加
+
 = 0.1.0 =
 * 初回リリース
 
 == Screenshots ==
 
 == Upgrade Notice ==
+
+= 0.2.0 =
+競合検知とスキーマ出力コントロールの追加
 
 = 0.1.0 =
 初回リリース
