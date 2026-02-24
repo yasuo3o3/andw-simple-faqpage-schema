@@ -119,7 +119,7 @@ VERSION-UP.md
 
 # ===== プロジェクト固有（必要に応じて追加） =====
 
-blog-yasuo/
-blog-draft/
-blog/
-conversation-log/
+docs/blog-yasuo/
+docs/blog-draft/
+docs/blog/
+docs/conversation-log/
