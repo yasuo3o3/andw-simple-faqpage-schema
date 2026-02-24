@@ -1,0 +1,41 @@
+/**
+ * エディタ用スタイル（最小限）
+ *
+ * @package AndwSimpleFaqpageSchema
+ */
+
+/* FAQ項目の区切り */
+.andw-faq-schema-item {
+	margin-bottom: 1.5em;
+	padding-bottom: 1em;
+	border-bottom: 1px dashed #ddd;
+}
+
+.andw-faq-schema-item:last-child {
+	border-bottom: none;
+}
+
+/* 項目ヘッダー（ラベル + 削除ボタン） */
+.andw-faq-schema-item-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 0.5em;
+}
+
+.andw-faq-schema-item-label {
+	font-size: 12px;
+	font-weight: 600;
+	color: #757575;
+	text-transform: uppercase;
+}
+
+/* エディタ内の質問プレースホルダー */
+.andw-faq-question[data-rich-text-placeholder]::before {
+	color: #999;
+}
+
+/* エディタ内の回答プレースホルダー */
+.andw-faq-answer[data-rich-text-placeholder]::before {
+	color: #999;
+}

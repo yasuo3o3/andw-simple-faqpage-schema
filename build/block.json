@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "andw/faq-schema",
+  "version": "0.1.0",
+  "title": "FAQ Schema",
+  "category": "text",
+  "icon": "editor-help",
+  "description": "FAQPage構造化データ（JSON-LD）を生成するFAQブロック",
+  "keywords": [
+    "faq",
+    "schema",
+    "構造化データ",
+    "よくある質問"
+  ],
+  "textdomain": "andw-simple-faqpage-schema",
+  "supports": {
+    "html": false,
+    "multiple": true
+  },
+  "attributes": {
+    "headingLevel": {
+      "type": "number",
+      "default": 3
+    },
+    "faqs": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css"
+}
