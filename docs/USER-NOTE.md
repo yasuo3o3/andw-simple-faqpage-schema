@@ -33,6 +33,67 @@
 以上を理解し、次の作業指示をするまで待機せよ
 
 
+
+## Claude Code コマンドリスト
+
+### 📝 ブログ系
+| コマンド | 内容 |
+|---|---|
+| `/blog-log` | 会話の全文を生のまま `docs/conversation-log/` に保存 |
+| `/blog-draft` | 生ログからブログ草稿を `docs/blog-draft/` に作成 |
+| `/blog-yasuo` | 草稿＋生ログからやすお化した記事を `docs/blog-yasuo/` に作成 |
+| `/blog-all` | 上記3つ＋netservice版を確認なしで順次実行 |
+| `/blog-netservice` | やすお版からnetservice.jp向け技術記録記事を作成 |
+
+### 🔍 レビュー系
+| コマンド | 内容 |
+|---|---|
+| `/review-design` | 設計を5人のエージェントが同時にレビュー |
+| `/review-code` | コードを5人のエージェントが同時にレビュー |
+
+### ✅ テスト系
+| コマンド | 内容 |
+|---|---|
+| `/create-test-issues` | 実機・テストサーバーで手動確認すべき項目をGitHub Issueに作成（最大15個） |
+
+### 🤖 エージェント（`/review-design` `/review-code` で自動起動）
+| エージェント | モデル | 役割 |
+|---|---|---|
+| `security-expert` | Opus | セキュリティ専門家（コード・サーバー・インフラ含む） |
+| `wp-expert` | Opus | WordPress熟練者＋他プラグイン開発者（コード品質・規約・設計） |
+| `beginner-user` | Sonnet | 初心者ユーザー（プラグインを使ったことしかない人目線） |
+| `breaker` | Sonnet | 壊し屋（想定外の使い方で壊しにかかる） |
+| `ai-crawler` | Sonnet | AIクローラー（JSON-LDや構造化データの解釈チェック） |
+
+### 🎨 スキル
+| スキル | 内容 |
+|---|---|
+| `yasuo-blog-writer` | やすおさんの声でブログ記事を書く |
+
+### 📁 設置場所
+```
+~/.claude/skills/yasuo-blog-writer/SKILL.md
+~/.claude/commands/blog-log.md
+~/.claude/commands/blog-draft.md
+~/.claude/commands/blog-yasuo.md
+~/.claude/commands/blog-all.md
+~/.claude/commands/blog-netservice.md
+~/.claude/commands/review-design.md
+~/.claude/commands/review-code.md
+~/.claude/commands/create-test-issues.md
+~/.claude/agents/security-expert.md
+~/.claude/agents/wp-expert.md
+~/.claude/agents/beginner-user.md
+~/.claude/agents/breaker.md
+~/.claude/agents/ai-crawler.md
+```
+
+## テンプレート同期
+c:\andW\andw-template から同期して。差分を見せて確認してから反映して
+同期対象: `CLAUDE.md`, `docs/AGENTS.md`, `docs/AI-CODING-PATTERNS.md`, `docs/CONTRIB.md`, `docs/WORDPRESS.md`, `docs/SETUP.md`
+その後は「テンプレートと同期して」と指示すれば同期する
+
+
 ## WordPress.org 審査指摘の是正作業
 これから plugin/プラグイン名/ のWordPress.org 審査指摘の是正作業を行う
 作業指示のプロンプトを渡すので待機。
