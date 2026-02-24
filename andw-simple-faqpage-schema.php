@@ -92,8 +92,8 @@ function andw_faq_schema_output_jsonld()
 		'mainEntity' => $main_entity,
 	);
 
-	// JSON-LD出力（wp_json_encodeでXSS対策）
-	echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>' . "\n";
+	// JSON-LD出力（wp_json_encodeでXSS対策、JSON_HEX_TAGで</script>インジェクション防止）
+	echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG) . '</script>' . "\n";
 }
 add_action('wp_head', 'andw_faq_schema_output_jsonld');
 
