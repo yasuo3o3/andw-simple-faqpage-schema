@@ -25,5 +25,5 @@
 
 ## テンプレート同期
 - マスターテンプレート: `c:\andW\andw-template`
-- 同期対象: `CLAUDE.md`, `docs/AGENTS.md`, `docs/AI-CODING-PATTERNS.md`, `docs/CONTRIB.md`, `docs/WORDPRESS.md`, `docs/SETUP.md`
+- 同期対象: `CLAUDE.md`, `docs/AGENTS.md`, `docs/AI-CODING-PATTERNS.md`, `docs/CONTRIB.md`, `docs/WORDPRESS.md`, `docs/SETUP.md`, `.vscode/settings.json`
 - 同期時は差分を見せて確認してから反映すること
